@@ -24,4 +24,4 @@
 -> 2015-08-27 <-
 
 
--> _http://bit.ly/strata-parallel_ <-
+-> _URL_ <-
