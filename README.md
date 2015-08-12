@@ -20,6 +20,7 @@
 
 -> Data Engineering Team <-
 -> 권정민 <-
+-> jeongmin.kwon@sk.com <-
 
 -> 2015-08-27 <-
 
