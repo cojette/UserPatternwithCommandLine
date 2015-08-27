@@ -1,6 +1,9 @@
 %title: Command-Line으로 탐색하는 사용자 패턴
+
 %author: SK Planet Data Engineering Team 권정민
+
 %date: 2015-08-27
+
 %note: Run presentation with `mdp README.md` # https://github.com/visit1985/mdp
 
 
