@@ -1,4 +1,5 @@
 
+
 -> The User Pattern Analysis with <-
  
 	  ______   ______   .___  ___. .___  ___.      ___      .__   __.  _______         __       __  .__   __.  _______           
@@ -22,7 +23,7 @@
 
 -> 2015-08-27 <-
 
--> _https://github.com/cojette/UserPatternwithCommandLine_ <-
+-> _http://bit.ly/1NINdeF_ <-
 
 ------------------------------------------------------------------------------
 
@@ -63,11 +64,11 @@
 # What is User Pattern?
 
 
-- 강-약-약-중간-약-약-...
+- 강-약-약-강-강-강-약-...
 
 - 사용자들이 서비스를 사용하는 방식
 
-- 5W 1H
+- 육하원칙 (5W 1H)
 
 ┍━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┯━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┑
 │    1차 (기본 지표)                                        │      2차 (추가 분석)          	       │  
@@ -79,7 +80,7 @@
 | - How : 어떻게 (purchase method, device, reference ...)   |                                          |
 ┕━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┷━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┙
 
- - 5W로 사용자 패턴을 만들어서 확인하는 것만으로도 이후 추가 분석의 방향을 결정할 수 있음. 
+ - 1차 요소만으로도 상당수의 쉬운 문제를 해결할 수 있다
 
 ----------------------------------------------------------------------------------------------------
 
@@ -90,8 +91,6 @@
 - 전체 사용자 현황
 
 - 기본 지표의 시계열 파악
-
-- 요일별, 일별, 시간별 사용자 수
 
 - 컨텐츠별 사용자 수 및 접속 시간
 
@@ -121,6 +120,7 @@
 	1963179,13,13465,,200002,0,0,113.32.91.206,2015-07-01 00:00:01.000000
 	1963180,9,2910, 산책  ,,2,0,211.187.227.229,2015-07-01 00:00:01.000000
 	1963181,9,12341,건강관리,,0,110,202.43.69.142,2015-07-01 00:00:01.000000
+
 
  - 세부 내용: 로그 현황 확인, 판매 건수 및 시간별/회원별 판매 현황 등
 
@@ -152,23 +152,10 @@
 
 - Data Exploration -- 데이터 탐색
 
- > Data Wrangling (간단한 데이터 분석은 거의 해결 가능)
 
--------------------------------------------------------------------------------
-
-
-# Why Command Line?
-
-
-- Agile
-
-- Augmenting
-
-- Scalable
-
-- Extensible
-
-- Ubiquitous
+  > Data Wrangling (간단한 데이터 분석은 거의 해결 가능)
+	
+  *- Command Line Tool: Ubiquitous, Extensible, Agile*
 
 -------------------------------------------------------------------------------
 
@@ -177,13 +164,18 @@
 
 
 - csv (https://ko.wikipedia.org/wiki/CSV_(파일_형식))
+
  - original : comma-separated values 
+
  - usual: character-separated values (included tab, other delimeter)
+
  - basic text log file format 
 
 
 - csvkit (https://github.com/onyxfish/csvkit)
+
  - suite of utilities for working with cvs format
+
  - install: sudo apt-get install 
 
 -------------------------------------------------------------------------------
@@ -203,9 +195,11 @@
     100   158    0   158    0     0     24      0 --:--:--  0:00:06 --:--:--    39
     100 65331  100 65331    0     0   4978      0  0:00:13  0:00:13 --:--:-- 15918
 
+
 - Controlling xlsx : in2csv
 
     $ in2csv data/log_sample.xlsx > data/log_sample.csv
+
 
 - Database : sql2csv
 
@@ -229,6 +223,7 @@
     	|  1963182 | 9    | 6286    | 뮤지컬           |             | 0   | 1000 | 218.153..281    | 2015-07-01 00:00:04.000000  |
     	|----------+------+---------+------------------+-------------+-----+------+-----------------+-----------------------------|
 
+
 - Syntax error check: csvclean
 
 	$ csvclean tr_sample.csv
@@ -250,6 +245,7 @@
 	|  1963180 | 2910    |             | 2   | 2015-07-01 00:00:01.000000  |
 	|  1963181 | 12341   |             | 0   | 2015-07-01 00:00:01.000000  |
 	|  1963182 | 6286    |             | 0   | 2015-07-01 00:00:04.000000  |
+
 
 - Filtering: grep, csvgrep
 
@@ -289,7 +285,8 @@
 
 - Exploration with SQL : csvsql
 	
-		$ csvsql --query "select substr(recdate, 15,2) as hour, count(1) from tr_sample group by substr(recdate, 15,2)" tr_sample.csv | csvlook
+		$ csvsql --query "select substr(recdate, 15,2) as hour, count(1) 
+		> from tr_sample group by substr(recdate, 15,2)" tr_sample.csv | csvlook
 		|-------+-----------|
 		|  hour | count(1)  |
 		|-------+-----------|
@@ -300,7 +297,9 @@
 		|  04   | 53        |
 		|-------+-----------|
 
+
 - Exploration with Python : csvpy
+	
 	$csvpy tr_sample.csv
 	Welcome! "tr_sample.csv" has been loaded in a CSVKitReader object named "reader".
 	In [1]: reader.next()
@@ -314,10 +313,10 @@
 
 # More Exploration
 
-
+- 2회 이상 구매한 사용자의 경우 어떤 아이템들을 사는지, 이 사용자들은 신규 아이템에 어떤 반응을 보였는지 살펴보자.
 
 	$ csvsql --query "select user_id from (select user_id, count(1) as cnt from tr_sample group by user_id)
-	> a where cnt >=2" tr_sample.csv >tr_user.csv
+	> where cnt >=2" tr_sample.csv >tr_user.csv
 
 	$ csvjoin -c "user_id, user_id" tr_user.csv tr_sample.csv >tr_up.csv
 
@@ -364,6 +363,7 @@
 
 - Other Command-line tools: BigML ...
 
+
 - Programming pipeline : modeling code (python, R.. )
 
 	$ R CMD BATCH  sampleml.R
@@ -372,6 +372,7 @@
   - parallizing modeling code: parallel 
 
 	$ ls data/*.txt | parallel --tag "cat {} | ./user_cluster.R 10"
+
 
 - Pandashells: shell pipeline with the statistical and visualization tools of the python data-stack
  (https://github.com/robdmc/pandashells)
@@ -384,9 +385,11 @@
 # Conclusion
 
 
-- User Pattern : useful, important and easy 
+- Data Analysis: Back To The Basic
 
-- Handful command-line tools for simple data analysis 
+- User Pattern : Useful, important and easy 
+
+- csvkit: Handful command-line tools for simple data analysis 
 
  - Handful of options cover 90% of use cases
 
@@ -402,11 +405,16 @@
 ## Data Science at the Command Line
 
 - Author: Jeroen Janssens 
+
 - Published by O'Reilly in October 2014
+
 - Overview of all tools on _http://datascienceatthecommandline.com_
 
 
 ## csvkit
+
+- csv*** --help
+
 
 ## pandashells 
 
