@@ -14,11 +14,9 @@
 -> _*Command-Line으로 탐색하는 사용자 패턴*_ <- 
 
 
--> Data Engineering Team <-
-
 -> 권정민 <-
 
--> jeongmin.kwon@sk.com <-
+-> cojette@gmail.com <-
 
 
 -> 2015-08-27 <-
