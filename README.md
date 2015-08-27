@@ -4,7 +4,7 @@
 
 %date: 2015-08-27
 
-%note: Run presentation with `mdp README.md` # https://github.com/visit1985/mdp
+%note: Run presentation with `mdp userpattern.md` # https://github.com/visit1985/mdp
 
 
     __  __                  ____        __  __                              _ __  __   
