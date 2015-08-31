@@ -15,7 +15,7 @@
 -> _*Command-Line으로 탐색하는 사용자 패턴*_ <-
 
 -> Data Engineering Team <-
--> 권정민 <-
+-> 권정민 (JeongMin Kwon) <-
 -> jeongmin.kwon@sk.com <-
 
 -> 2015-08-27 <-
