@@ -4,7 +4,9 @@
 
 %date: 2015-08-27
 
-%note: Run presentation with `mdp userpattern.md` 
+%note: Run presentation with `mdp userpattern.md`  (English ver. `mdp userpattern_en.md`)
+
+
 % # https://github.com/visit1985/mdp
 
 
